@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>NOVA_MOVIL</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="https://kit.fontawesome.com/e564244708.js" crossorigin="anonymous"></script>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.css">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/uikit@3.2.2/dist/css/uikit.min.css" />
+        <link rel="stylesheet" href="public/css/icofont.min.css">
+        <link rel="stylesheet" href="public/css/style.css" />
+        <link rel="stylesheet" href="public/css/styles.css">
+    </head>
+    <body>
+        <c:set var = "userId" value = "${sessionScope['userID']}" />
+
+        <div class="ui container">
+            <div class="ui secondary  menu">
+                <div class="item logo">
+                    <a href="/DuraznoZapatanga_Wilmer_Examen"><h2>NOVA MOVIL<br><span>PONEBOOK</span></h2> </a>
+                </div>
+
+                <div class="right menu">
+                    <div class="item">
+                        <form action="busqueda">
+                            <div class="ui left icon action input">
+                                <i class="users icon"></i>
+                                <input type="text" placeholder="Buscar..." name="usuario">
+                                <input type="submit" class="ui blue submit button" value="Buscar">
+                            </div>
+                        </form>
+                    </div>
+                    <c:choose>
+                        <c:when test="${userId == null}">
+                            <div class="item">
+                                <a href="registro" class="ui primary button">Registro</a>
+                            </div>
+                            <div class="item">
+                                <a href="login" class="ui button">Iniciar Sesion</a> 
+                            </div>
+                        </c:when>    
+                        <c:otherwise>
+                            <div class="item">
+                                <a href="my-agenda" class="ui primary button">Mi perfil</a>
+                            </div>
+                        </c:otherwise>
+                    </c:choose>
+                </div>
+            </div>
+        </div>
+
+        <div class="layout-header">
+            <div class="column-description">
+                <h1>NOVA MOVI<br><span>PONEBOOK</span></h1>
+                <div>
+                    <p>Un servicio gratuito donde podrás añadir los datos de tus contactos con tan solo registrarte.</p><br>
+                    <p>.....Todos tus contactos seguros y sin limitacion.....</p>
+                </div>
+                <c:choose>
+                    <c:when test="${userId == null}">
+                        <a href="registro" class="ui primary button btn-index-register">Registro</a>
+                    </c:when>    
+                    <c:otherwise>
+
+                        <a href="my-agenda" class="ui primary button btn-index-register">Ver mi agenda</a>
+
+                    </c:otherwise>
+                </c:choose>
+            </div>
+            <div class="column-bg">
+            </div>
+        </div>
+
+
+        <div class="header-contet">
+            <div class=" header-description">
+                <h2>EXAMEN DE SOBRE AGENDA TELEFONICA?</h2>
+                <p>Se desarollo una agenda telefónica en donde se tiene a los usuarios con datos de cedula, nombres, apellidos, correo y contraseña. 
+                   Tambien cada uno de estos usuarios tienen asignado uno o más teléfonos de contacto de diferente tipo y operador.              </p>
+                <div class="buttuns-content">
+                    <a href="busqueda?usuario=all">Listar Todos los Usuarios Registrados</a>
+                </div>
+            </div>
+        </div>
+
+       
+
+        <footer>
+            <div class="icon_footer">
+                <i class="fas fa-chevron-up"></i>
+            </div>
+            <div class="social_foote">
+                <a href="https://www.instagram.com/claudio.mldo" target="_BLANK"><i class="fab fa-instagram"></i></a>
+                <a href="https://www.facebook.com/Claudio.Mldo" target="_BLANK"><i class="fab fa-facebook-square"></i></a>
+                <a href="https://github.com/MClaudio" target="_BLANK"><i class="fab fa-github-square"></i></a>
+            </div>
+            <p>&COPY;Todos los derechos reservados 12/2020  Realizado por Wilmer Durazno</p>
+        </footer>
+
+        <script src="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/uikit@3.2.2/dist/js/uikit.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/uikit@3.2.2/dist/js/uikit-icons.min.js"></script>
+    </body>
+</html>
